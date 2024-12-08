@@ -11,7 +11,7 @@ const Middle = () => {
       <div className="flex flex-row items-center gap-[8px] z-20">
         <div className="w-[26px] h-[26px]">
           {/* Logo Image */}
-          <Image src="/LogoImage.png" alt="Logo" width={26} height={26} />
+          <img src="/LogoImage.png" alt="Logo" width={26} height={26} />
         </div>
         {/* Comforty Text */}
         <p className="text-[#272343] font-inter font-medium text-[15px] leading-[120%]">
