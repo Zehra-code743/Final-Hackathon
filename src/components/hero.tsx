@@ -26,7 +26,7 @@ export default function Hero() {
           {/* Chair Image */}
           <div className="mt-8 md:mt-0 flex justify-center w-full max-w-[350px]">
             <Image
-              src="/Product Image.png" 
+              src="/chair2.png" 
               alt="Chair"
               width={350}
               height={350}

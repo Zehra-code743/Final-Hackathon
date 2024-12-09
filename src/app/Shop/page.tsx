@@ -1,5 +1,5 @@
 'use client'; // If using Next.js 13 or later with app directory
-
+import Image from "next/image";
 import MainImg from "/image1.png";
 import Product1 from "/product1.png";
 import Product2 from "/product2.png";
@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 mt-10">
         <div className="w-full sm:w-1/2 flex items-center justify-center">
           <div className="w-[400px] h-[400px] flex items-center justify-center">
-            <img className="w-full h-full" src="/image1.png" alt="Main Image" />
+            <Image className="w-full h-full" src="/image1.png" alt="Main Image"  />
           </div>
         </div>
 
@@ -48,9 +48,9 @@ export default function Home() {
           {/* Product Box 1 */}
           <div className="w-full sm:w-[270px] md:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
-              <img
+              <Image
                 src="/product1.png"
-                alt="Product Image"
+                alt="Product Image" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -61,7 +61,7 @@ export default function Home() {
           {/* Product Box 2 */}
           <div className="w-full sm:w-[270px] md:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
-              <img
+              <Image
                 src="/product2.png"
                 alt="Product Image"
                 className="w-full h-full object-cover"
@@ -74,7 +74,7 @@ export default function Home() {
           {/* Product Box 3 */}
           <div className="w-full sm:w-[270px] md:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
-              <img
+              <Image
                 src="/product3.png"
                 alt="Product Image"
                 className="w-full h-full object-cover"
@@ -87,7 +87,7 @@ export default function Home() {
           {/* Product Box 4 */}
           <div className="w-full sm:w-[270px] md:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
-              <img
+              <Image
                 src="/product4.png"
                 alt="Product Image"
                 className="w-full h-full object-cover"

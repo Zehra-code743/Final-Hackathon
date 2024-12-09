@@ -1,5 +1,6 @@
 "use client"; // Ensures it's a Client Component
 import Link from "next/link"; // Import Link
+import Image from "next/image";
 
 const ProductsPage = () => {
   return (
@@ -12,9 +13,9 @@ const ProductsPage = () => {
         <Link href="/product/1">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-yellow-200 rounded-t-lg overflow-hidden">
-              <img
-                src="./sofa.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/sofa.png"
+                alt="Library Stool Chair"width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -33,9 +34,9 @@ const ProductsPage = () => {
         <Link href="/product/2">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-blue-200 rounded-t-lg overflow-hidden">
-              <img
-                src="./chair2.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/chair2.png"
+                alt="Library Stool Chair"width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -54,9 +55,9 @@ const ProductsPage = () => {
         <Link href="/product/3">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-green-200 rounded-t-lg overflow-hidden">
-              <img
-                src="./chair.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/chair.png"
+                alt="Library Stool Chair"width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -75,9 +76,9 @@ const ProductsPage = () => {
         <Link href="/product/4">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-red-200 rounded-t-lg overflow-hidden">
-              <img
-                src="./image1.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/image1.png"
+                alt="Library Stool Chair" width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -99,9 +100,9 @@ const ProductsPage = () => {
         <Link href="/product/5">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-yellow-200 rounded-t-lg overflow-hidden">
-              <img
-                src="./image3.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/image3.png"
+                alt="Library Stool Chair" width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -120,9 +121,9 @@ const ProductsPage = () => {
         <Link href="/product/6">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-blue-200 rounded-t-lg overflow-hidden">
-              <img
+              <Image
                 src="/product2.png"
-                alt="Library Stool Chair"
+                alt="Library Stool Chair" width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -141,9 +142,9 @@ const ProductsPage = () => {
         <Link href="/product/7">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-green-200 rounded-t-lg overflow-hidden">
-              <img
+              <Image
                 src="/product3.png"
-                alt="Library Stool Chair"
+                alt="Library Stool Chair" width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -162,9 +163,9 @@ const ProductsPage = () => {
         <Link href="/product/8">
           <div className="w-[312px] h-[388px] flex flex-col bg-white rounded-lg shadow-lg hover:scale-105 transition-transform overflow-hidden">
             <div className="w-full h-[312px] bg-red-200 rounded-t-lg overflow-hidden">
-              <img
-                src="product1.png"
-                alt="Library Stool Chair"
+              <Image
+                src="/product1.png"
+                alt="Library Stool Chair" width={400} height={400}
                 className="object-cover w-full h-full"
               />
             </div>
