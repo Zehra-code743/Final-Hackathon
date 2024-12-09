@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Image from "next/image";
 import {
@@ -11,11 +13,11 @@ import { FaPaypal, FaCcVisa, FaCcMastercard, FaCcAmex } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 px-4 sm:px-12 md:px-28">
+    <footer className="bg-white border-t border-gray-200 px-4 sm:px-12 lg:px-28">
       <div className="mx-auto py-12">
-        <div className="flex flex-wrap justify-between gap-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
           {/* Brand Section */}
-          <div className="flex flex-col w-full md:w-[320px] items-start">
+          <div className="flex flex-col w-full sm:w-[320px] items-start">
             <div className="flex items-center gap-2">
               <Image
                 src="/Logo icon.png"
@@ -27,11 +29,11 @@ export default function Footer() {
                 Comforty
               </span>
             </div>
-            <p className="mt-4 text-gray-500">
+            <p className="mt-4 text-gray-500 text-sm sm:text-base">
               Vivamus tristique odio sit amet velit semper, eu posuere turpis
               interdum. Cras egestas purus.
             </p>
-            <div className="flex justify-center gap-4 mt-4">
+            <div className="flex justify-center sm:justify-start gap-4 mt-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -76,9 +78,9 @@ export default function Footer() {
           </div>
 
           {/* Category Section */}
-          <div className="w-full md:w-1/4 lg:w-[105px]">
+          <div className="w-full sm:w-1/4 lg:w-[150px]">
             <h4 className="text-lg font-semibold text-[#9A9CAA]">Category</h4>
-            <ul className="mt-4 text-[#272343] space-y-2">
+            <ul className="mt-4 text-[#272343] space-y-2 text-sm sm:text-base">
               <li>
                 <a
                   href="#"
@@ -131,9 +133,9 @@ export default function Footer() {
           </div>
 
           {/* Support Section */}
-          <div className="w-full md:w-1/4 lg:w-[156px]">
+          <div className="w-full sm:w-1/4 lg:w-[180px]">
             <h4 className="text-lg font-semibold text-[#9A9CAA]">Support</h4>
-            <ul className="mt-4 text-[#272343] space-y-2">
+            <ul className="mt-4 text-[#272343] space-y-2 text-sm sm:text-base">
               <li>
                 <a
                   href="#"
@@ -170,7 +172,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter Section */}
-          <div className="w-full md:w-1/4 lg:w-[424px]">
+          <div className="w-full sm:w-1/4 lg:w-[300px]">
             <h4 className="text-lg font-semibold text-[#9A9CAA]">Newsletter</h4>
             <div className="mt-4 flex gap-2">
               <input
@@ -182,7 +184,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </div>
-            <p className="mt-4 text-gray-500">
+            <p className="mt-4 text-gray-500 text-sm sm:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               tincidunt erat enim.
             </p>
@@ -191,7 +193,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="flex justify-between items-center flex-wrap text-[#9A9CAA] border-t pt-8">
-          <p>
+          <p className="text-sm sm:text-base">
             © 2021 - Blogy - Designed & Developed by{" "}
             <a href="#" className="text-[#272343] hover:underline">
               Zakirsoft

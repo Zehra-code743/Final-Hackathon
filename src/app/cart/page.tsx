@@ -1,17 +1,19 @@
+'use client'; // If using Next.js 13 or later with app directory
+
 import Image from "next/image";
 
 const Cart = () => {
   return (
     <div className="max-w-[1321px] mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Left Column for Cart Items */}
+        <div className="lg:w-2/3">
           <h2 className="text-2xl font-bold mb-6">Bag</h2>
 
           {/* Item 1 */}
           <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4">
             <div className="flex items-center space-x-4">
               <div className="w-24 h-24 bg-orange-200 rounded">
-                {/* Correct image path */}
                 <Image src="/Frame.png" alt="Library Stool Chair" width={96} height={96} />
               </div>
               <div>
@@ -45,10 +47,9 @@ const Cart = () => {
           </div>
 
           {/* Item 2 */}
-          <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-md">
+          <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4">
             <div className="flex items-center space-x-4">
               <div className="w-24 h-24 bg-gray-300 rounded">
-                {/* Correct image path */}
                 <Image src="/Frame1.png" alt="Library Stool Chair" width={96} height={96} />
               </div>
               <div>
@@ -80,6 +81,34 @@ const Cart = () => {
               </button>
             </div>
           </div>
+        </div>
+
+        {/* Right Column for Cart Summary */}
+        <div className="lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-xl font-semibold mb-4">Cart Summary</h3>
+          <div className="mb-4">
+            <div className="flex justify-between mb-2">
+              <span className="text-gray-700">Subtotal</span>
+              <span className="font-semibold text-gray-800">$198</span>
+            </div>
+            <div className="flex justify-between mb-2">
+              <span className="text-gray-700">Estimated Delivery & Handling</span>
+              <span className="font-semibold text-gray-800">$15</span>
+            </div>
+            <div className="flex justify-between mb-4">
+              <span className="text-gray-700">Taxes</span>
+              <span className="font-semibold text-gray-800">$18</span>
+            </div>
+            <div className="flex justify-between border-t pt-4">
+              <span className="text-xl font-bold text-gray-800">Total</span>
+              <span className="text-xl font-bold text-gray-800">$231</span>
+            </div>
+          </div>
+          
+          {/* Checkout Button */}
+          <button className="w-full mt-6 bg-[#029FAE] text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+ member Checkout
+          </button>
         </div>
       </div>
     </div>

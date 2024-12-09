@@ -1,3 +1,5 @@
+'use client'; // Use client-side rendering in Next.js 13+ app directory
+
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";  // Import relevant icons
 
@@ -14,9 +16,10 @@ const ContactSection = () => {
         Hesitate!
       </p>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      {/* Contact Information and Form */}
+      <div className="flex flex-col sm:flex-row xl:flex-row gap-8">
         {/* Contact Info */}
-        <div className="space-y-6">
+        <div className="flex-1 space-y-6">
           {/* Address */}
           <div className="flex items-start gap-4">
             <div className="w-8 h-8 text-teal-500">
@@ -54,7 +57,7 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Form */}
-        <div>
+        <div className="flex-1">
           <form className="space-y-4">
             {/* Name */}
             <div>

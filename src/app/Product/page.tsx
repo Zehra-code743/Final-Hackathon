@@ -1,8 +1,11 @@
-import MainImg from "/image1.png"
-import Product1 from "/product1.png"
+'use client'; // If using Next.js 13 or later with app directory
+
+import MainImg from "/image1.png";
+import Product1 from "/product1.png";
 import Product2 from "/product2.png";
 import Product3 from "/product3.png";
 import Product4 from "/product4.png";
+
 export default function Home() {
   return (
     <div className="max-w-[1321px] mx-auto px-4">
@@ -11,7 +14,7 @@ export default function Home() {
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="w-[400px] h-[400px]  flex items-center justify-center">
             {/* Replace with your image */}
-            <img className="w-full h-full" src="/image1.png" alt="" />
+            <img className="w-full h-full" src="/image1.png" alt="Main Image" />
           </div>
         </div>
 
@@ -43,10 +46,10 @@ export default function Home() {
         </div>
 
         {/* Product Container*/}
-        <div className="flex flex-wrap justify-center gap-6 mb-10">
+
+        <div className="flex flex-wrap justify-center gap-6">
           {/* Product Box 1*/}
-          <div className="w-[270px] h-[305px] flex flex-col justify-between p-4">
-            {/* Product Image */}
+          <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <img
                 src="/product1.png"
@@ -59,10 +62,10 @@ export default function Home() {
           </div>
 
           {/* Product Box 2*/}
-          <div className="w-[270px] h-[305px] flex flex-col justify-between p-4">
+          <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <img
-                src="/product2.png"
+                src="product2.png"
                 alt="Product Image"
                 className="w-full h-full object-cover"
               />
@@ -72,7 +75,7 @@ export default function Home() {
           </div>
 
           {/* Product Box 3*/}
-          <div className="w-[270px] h-[305px] flex flex-col justify-between p-4">
+          <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <img
                 src="/product3.png"
@@ -85,7 +88,7 @@ export default function Home() {
           </div>
 
           {/* Product Box 4*/}
-          <div className="w-[270px] h-[305px] flex flex-col justify-between p-4">
+          <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <img
                 src="/product4.png"

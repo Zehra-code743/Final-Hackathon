@@ -6,28 +6,28 @@ import { IoEllipseOutline } from "react-icons/io5";
 
 const Middle = () => {
   return (
-    <div className="flex flex-row justify-start items-center px-[300px] py-[20px] gap-[10px] w-[1602px] h-[84px] bg-[#F0F2F3] relative z-10">
+    <div className="flex flex-row justify-between items-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-32 py-4 sm:py-6 md:py-8 gap-4 w-full bg-[#F0F2F3] relative z-10">
       {/* Logo Section */}
-      <div className="flex flex-row items-center gap-[8px] z-20">
+      <div className="flex flex-row items-center gap-2 sm:gap-4 z-20">
         <div className="w-[26px] h-[26px]">
           {/* Logo Image */}
-          <img src="/LogoImage.png" alt="Logo" width={26} height={26} />
+          <img src="./LogoImage.png" alt="Logo" width={26} height={26} />
         </div>
         {/* Comforty Text */}
-        <p className="text-[#272343] font-inter font-medium text-[15px] leading-[120%]">
+        <p className="text-[#272343] font-inter font-medium text-[15px] sm:text-[18px] leading-[120%]">
           Comforty
         </p>
       </div>
 
       {/* Cart Section - Move it further back */}
-      <div className="absolute right-[345px] flex flex-row items-center gap-3 z-0">
+      <div className="absolute right-4 sm:right-12 md:right-16 lg:right-32 flex flex-row items-center gap-3 z-0">
         {/* White Box */}
         <div className="flex flex-row items-center gap-3 px-4 py-2 bg-white rounded-lg w-auto h-[44px] justify-center relative">
           {/* Cart Icon */}
-          <IoCartOutline className="text-[#272343]" />
+          <IoCartOutline className="text-[#272343] w-5 h-5" />
 
           {/* Cart Text */}
-          <div className="text-[#272343] font-inter font-medium text-[12px] leading-[110%] capitalize">
+          <div className="text-[#272343] font-inter font-medium text-[12px] sm:text-[14px] leading-[110%] capitalize">
             Cart
           </div>
 
