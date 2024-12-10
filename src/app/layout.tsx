@@ -12,6 +12,13 @@ import Cart from "./cart/page";
 import FAQ from "./FAQ/page";
 import ProductsPage from "@/components/OurProducts";
 import ContactSection from "./Contact/page";
+import Company from "@/components/company";
+import FeatureProduct from "@/components/FeatureProduct";
+import Shop from "./Shop/page";
+import TopCategories from "@/components/TopCategories";
+import Style from "@/components/style";
+
+
 
 
 
@@ -50,11 +57,15 @@ export default function RootLayout({
        <Middle />
        <Header/>
        <Hero/>
-<AboutUs/>
-       <Cart/>
-     <FAQ/>
-     <ProductsPage/>
-    
+       <Company/>
+       <FeatureProduct/>
+       <TopCategories/>
+       <Style/>
+
+       
+     
+<ProductsPage/>
+    <Shop/>
      <ContactSection/>
        
        <Footer/> 

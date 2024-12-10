@@ -10,7 +10,7 @@ export default function Home() {
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="w-[400px] h-[400px]  flex items-center justify-center">
             {/* Replace with your image */}
-            <Image src="/image1.png" alt="Main Image" width={400} height={400} className="w-full h-full" />
+            <Image src="/pinksofa.png" alt="Main Image" width={400} height={400} className="w-full h-full" />
           </div>
         </div>
 
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <Image
-                src="/product1.png"
+                src="/Image1.png"
                 alt="Product Image" width={400} height={400}
                 className="w-full h-full object-cover"
               />
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <Image
-                src="product2.png"
+                src="/Image.png"
                 alt="Product Image" width={400} height={400}
                 className="w-full h-full object-cover"
               />
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="w-full sm:w-[270px] lg:w-[270px] h-[305px] flex flex-col justify-between p-4">
             <div className="h-[263px] w-full bg-gray-400 rounded-t-md overflow-hidden">
               <Image
-                src="/product4.png"
+                src="/Frame1.png"
                 alt="Product Image" width={400} height={400}
                 className="w-full h-full object-cover"
               />
