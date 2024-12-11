@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Import the Link component from Next.js
 import { FaCheck } from 'react-icons/fa6';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiCircleAlert } from "react-icons/ci";
@@ -28,15 +29,23 @@ const Topbar = () => {
         {/* Larger Dropdown Icon */}
         <RiArrowDropDownLine className="text-white w-[20px] h-[15px]" />
 
-        {/* Faqs */}
-        <div className="w-[50px] h-[17px] text-white text-[13px] leading-[130%] text-center font-inter">
-          <p>Faqs</p>
-        </div>
+        {/* Faqs - Adding link here */}
+        <Link href="/FAQ">
+          <div className="w-[50px] h-[17px] text-white text-[13px] leading-[130%] text-center font-inter cursor-pointer">
+            <p>FAQ</p>
+          </div>
+        </Link>
 
         {/* Need Help and Alert Icon - Circle Icon on the Left */}
         <div className="flex flex-row items-center gap-2 w-auto h-[17px]">
-          <div className="w-[16px] h-[16px] opacity-[0.7]">
+          <div className="relative w-[16px] h-[16px] opacity-[0.7]">
+            {/* CiCircleAlert Icon */}
             <CiCircleAlert className="text-white w-[16px] h-[16px]" />
+
+            {/* Notification number (2) inside the icon */}
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white text-[10px] font-semibold">
+              2
+            </div>
           </div>
           <p className="text-white text-[13px] leading-[130%] font-inter">Need Help</p>
         </div>

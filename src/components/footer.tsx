@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex flex-col w-full sm:w-[320px] items-start">
             <div className="flex items-center gap-2">
               <Image
-                src="/LogoImage.png"
+                src="/theLogo.png"
                 alt="logo"
                 width={40}
                 height={40}

@@ -1,7 +1,6 @@
 'use client'; // If using Next.js 13 or later with app directory
 
 import React from "react"; // Import React
-
 import Image from "next/image"; // Import Image component from Next.js
 
 const AboutUs = () => {
@@ -18,6 +17,15 @@ const AboutUs = () => {
             premium materials, and modern aesthetics, we craft chairs that
             seamlessly blend style with functionality.
           </p>
+
+          {/* Button to view Collection */}
+          <div className="text-center mt-12"> {/* Increased margin-top */}
+            <button
+              className="bg-green-500 text-white py-4 px-12 rounded-md hover:bg-green-600 transition duration-300" // Increased padding
+            >
+              Collection
+            </button>
+          </div>
         </div>
         {/* Image Section */}
         <div className="bg-gray-200 h-full rounded-lg overflow-hidden flex-1">
@@ -98,7 +106,7 @@ const AboutUs = () => {
           <p className="text-gray-600">$99.00</p>
         </div>
 
-        {/* Product Card - The Dandy chair */}
+        {/* Product Card - Another Dandy chair */}
         <div className="bg-gray-200 rounded-lg p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
           <div className="h-48 rounded-lg mb-4">
             <Image
@@ -112,6 +120,15 @@ const AboutUs = () => {
           <h3 className="text-lg font-semibold">The Dandy chair</h3>
           <p className="text-gray-600">$99.00</p>
         </div>
+      </div>
+
+      {/* Collection Button */}
+      <div className="text-center mt-12"> {/* Increased margin-top */}
+        <button
+          className="bg-green-500 text-white py-5 px-16 rounded-md hover:bg-green-600 transition duration-300" // Increased padding and width
+        >
+          View Our Collection
+        </button>
       </div>
     </div>
   );

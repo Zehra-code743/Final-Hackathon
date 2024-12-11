@@ -7,9 +7,6 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 
 import Footer from "@/components/footer";
-import AboutUs from "./About/page";
-import Cart from "./cart/page";
-import FAQ from "./FAQ/page";
 import ProductsPage from "@/components/OurProducts";
 import ContactSection from "./Contact/page";
 import Company from "@/components/company";
@@ -50,9 +47,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
+        
        {children}
-       <Footer/>
+       
         <Topbar/>
        <Middle />
        <Header/>
