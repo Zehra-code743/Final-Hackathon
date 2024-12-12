@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';  // Import the Image component from Next.js
 import { IoCartOutline } from "react-icons/io5";
 import { IoEllipseOutline } from "react-icons/io5";
+import Link from 'next/link';  // Import the Link component from Next.js
 
 const Middle = () => {
   return (
@@ -26,10 +27,12 @@ const Middle = () => {
           {/* Cart Icon */}
           <IoCartOutline className="text-[#272343] w-5 h-5" />
 
-          {/* Cart Text */}
-          <div className="text-[#272343] font-inter font-medium text-[12px] sm:text-[14px] leading-[110%] capitalize">
-            Cart
-          </div>
+          {/* Cart Text with Link */}
+          <Link href="/cart"> {/* Add Link here to navigate to the cart page */}
+            <div className="text-[#272343] font-inter font-medium text-[12px] sm:text-[14px] leading-[110%] capitalize">
+              Cart
+            </div>
+          </Link>
 
           {/* Notification (No and Badge) */}
           <div className="relative flex items-center justify-center w-[20px] h-[20px]">
