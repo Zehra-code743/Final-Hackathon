@@ -61,8 +61,8 @@ export default function RootLayout({
        
      
 <ProductsPage/>
-    <Shop/>
-     <ContactSection/>
+    
+     
        
        <Footer/>
       </body>

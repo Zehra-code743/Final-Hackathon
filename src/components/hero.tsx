@@ -1,40 +1,33 @@
-'use client';
+// components/HeroSection.js
 
 import Image from "next/image";
 
-export default function Hero() {
+const HeroSection = () => {
   return (
-    <div className="px-4 sm:px-12 xl:px-28">
-      <div className="bg-gray-100 mx-auto xl:w-[1200px] w-[95%] py-10 xl:h-[700px] flex flex-col md:flex-row items-center justify-center gap-12 rounded-bl-3xl lg:px-8">
-  
-        {/* Text and Button Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-12">
-          
-          {/* Text Section */}
-          <div className="max-w-[557px]">
-            <p className="text-sm sm:text-[14px] font-inter mb-4 text-[#272343] uppercase tracking-wider">
-              Welcome to Chairy
-            </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[60px] font-inter font-bold text-[#272343] leading-normal">
-              Best Furniture Collection For Your Interior.
-            </h1>
-            <button className="mt-8 font-bold bg-[#029FAE] text-white px-6 py-3 rounded-lg text-sm hover:bg-[#005f5a] transition">
-              Shop Now →
-            </button>
-          </div>
+    <div className="bg-gray-50 flex flex-col-reverse lg:flex-row items-center justify-between mx-auto px-6 py-12 lg:py-24 max-w-7xl">
+      {/* Left Section */}
+      <div className="w-full lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+        <p className="text-sm text-gray-500 mb-2 uppercase">Welcome to Chairy</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Best Furniture Collection For Your Interior.
+        </h1>
+        <button className="mt-4 bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-600 transition-all duration-300">
+          Shop Now →
+        </button>
+      </div>
 
-          {/* Chair Image */}
-          <div className="mt-8 md:mt-0 flex justify-center w-full max-w-[350px]">
-            <Image
-              src="/chair2.png" 
-              alt="Chair"
-              width={350}
-              height={350}
-              objectFit="cover"
-            />
-          </div>
-        </div>
+      {/* Right Section: Image */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <Image
+          src="/chair2.png"
+          alt="Furniture Chair"
+          width={500}
+          height={500}
+          className="object-contain"
+        />
       </div>
     </div>
   );
-}
+};
+
+export default HeroSection; // Correct export

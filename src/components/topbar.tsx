@@ -1,57 +1,30 @@
-import React from 'react';
-import Link from 'next/link'; // Import the Link component from Next.js
-import { FaCheck } from 'react-icons/fa6';
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { CiCircleAlert } from "react-icons/ci";
+import Link from "next/link";
 
-const Topbar = () => {
+const TopBar = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-32 py-3 sm:py-4 md:py-6 lg:py-8 w-full h-[60px] bg-[#272343]">
-      {/* Text and Icon on the left */}
-      <div className="flex items-center gap-2 w-full sm:w-[250px] h-[16px] opacity-[0.7] mb-2 sm:mb-0">
-        <div className="flex items-center gap-2">
-          {/* FaCheck Icon */}
-          <FaCheck className="text-white w-4 h-4" />
-          {/* Text */}
-          <div className="w-full sm:w-[230px] h-[14px] font-inter text-[13px] leading-[14px] capitalize text-white">
-            <p>Free shipping on all orders over $50</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Language Selector, Faqs, Need Help, and Alert Icon */}
-      <div className="flex flex-row sm:flex-row items-center gap-4 opacity-[0.7]">
-        {/* Text for Eng */}
-        <div className="w-[24px] h-[17px] text-white text-[13px] leading-[130%] text-center font-inter">
-          <p>Eng</p>
+    <div className="bg-[#272343] text-white text-sm py-2">
+      <div className="container mx-auto flex justify-between items-center px-4">
+        {/* Left Section */}
+        <div className="flex items-center">
+          <span className="mr-2">✓</span>
+          <p>Free Shipping On All Orders Over $50</p>
         </div>
 
-        {/* Larger Dropdown Icon */}
-        <RiArrowDropDownLine className="text-white w-[20px] h-[15px]" />
-
-        {/* Faqs - Adding link here */}
-        <Link href="/FAQ">
-          <div className="w-[50px] h-[17px] text-white text-[13px] leading-[130%] text-center font-inter cursor-pointer">
-            <p>FAQ</p>
-          </div>
-        </Link>
-
-        {/* Need Help and Alert Icon - Circle Icon on the Left */}
-        <div className="flex flex-row items-center gap-2 w-auto h-[17px]">
-          <div className="relative w-[16px] h-[16px] opacity-[0.7]">
-            {/* CiCircleAlert Icon */}
-            <CiCircleAlert className="text-white w-[16px] h-[16px]" />
-
-            {/* Notification number (2) inside the icon */}
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white text-[10px] font-semibold">
-              2
-            </div>
-          </div>
-          <p className="text-white text-[13px] leading-[130%] font-inter">Need Help</p>
+        {/* Right Section */}
+        <div className="flex items-center space-x-6">
+          <Link href="/pages" className="hover:underline">
+            Pages
+          </Link>
+          <Link href="/FAQ" className="hover:underline">
+            FAQ
+          </Link>
+          <a href="#" className="hover:underline">
+            Need Help
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default Topbar;
+export default TopBar;
