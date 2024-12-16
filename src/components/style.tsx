@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const popularStyles = [
-  { id: 1, name: "White Chair 1", imageUrl: "/image2.webp" },
-  { id: 2, name: "White Chair 2", imageUrl: "/image.webp" },
-  { id: 3, name: "Gray Chair", imageUrl: "/image8.webp" },
-  { id: 4, name: "White Chair 3", imageUrl: "/image.webp" },
+  { id: 1, name: "White Chair 1", imageUrl: "/Image2.webp" },
+  { id: 2, name: "White Chair 2", imageUrl: "/Image.webp" },
+  { id: 3, name: "Gray Chair", imageUrl: "/Image8.webp" },
+  { id: 4, name: "White Chair 3", imageUrl: "/Image.webp" },
 ];
 
 export default function Style() {

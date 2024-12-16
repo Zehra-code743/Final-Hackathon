@@ -48,8 +48,8 @@ function ProductDetails() {
 function FeaturedProducts() {
   const products = [
     { id: 1, name: "Library Stool Chair", price: "$20", imageUrl: "/image1.webp" },
-    { id: 2, name: "Library Stool Chair", price: "$20", imageUrl: "/image.webp" },
-    { id: 3, name: "Library Stool Chair", price: "$20", imageUrl: "/image3.webp" },
+    { id: 2, name: "Library Stool Chair", price: "$20", imageUrl: "/Image.webp" },
+    { id: 3, name: "Library Stool Chair", price: "$20", imageUrl: "/Image3.webp" },
     { id: 4, name: "Library Stool Chair", price: "$20", imageUrl: "/Frame.webp" },
     { id: 5, name: "Library Stool Chair", price: "$20", imageUrl: "/Frame1.webp" },
   ];

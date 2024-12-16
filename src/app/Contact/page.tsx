@@ -9,6 +9,7 @@ export default function ContactForm() {
       {/* Render Header */}
       <Header />
 
+      {/* Contact Form Section */}
       <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
         <div className="bg-white shadow-md rounded-lg p-8 max-w-4xl w-full">
           <h2 className="text-3xl font-bold text-center mb-4">Get In Touch With Us</h2>
@@ -99,8 +100,42 @@ export default function ContactForm() {
         </div>
       </div>
 
+      {/* Feature Section */}
+      <FeatureSection />
+
       {/* Render Footer */}
       <Footer />
     </div>
+  );
+}
+
+// FeatureSection Component
+
+ function FeatureSection() {
+  return (
+    <section className="bg-gray-100 py-8">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center items-center">
+        {/* High Quality */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl mb-2">🏆</div>
+          <h3 className="text-lg font-semibold mb-1">High Quality</h3>
+          <p className="text-gray-600 text-sm">Crafted from top materials</p>
+        </div>
+
+        {/* Warranty Protection */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl mb-2">✅</div>
+          <h3 className="text-lg font-semibold mb-1">Warranty Protection</h3>
+          <p className="text-gray-600 text-sm">Over 2 years</p>
+        </div>
+
+        {/* 24/7 Support */}
+        <div className="flex flex-col items-center">
+          <div className="text-4xl mb-2">🎧</div>
+          <h3 className="text-lg font-semibold mb-1">24 / 7 Support</h3>
+          <p className="text-gray-600 text-sm">Dedicated support</p>
+        </div>
+      </div>
+    </section>
   );
 }

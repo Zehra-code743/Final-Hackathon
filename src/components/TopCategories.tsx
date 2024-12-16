@@ -10,13 +10,13 @@ const categories = [
   {
     id: 2,
     name: "Wooden Chair",
-    imageUrl: "/image9.webp", // Replace with actual path
+    imageUrl: "/Image9.webp", // Replace with actual path
     products: "137 Products",
   },
   {
     id: 3,
     name: "Desk Chair",
-    imageUrl: "/image3.webp", // Replace with actual path
+    imageUrl: "/Image3.webp", // Replace with actual path
     products: "154 Products",
   },
 ];

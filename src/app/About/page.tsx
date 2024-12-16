@@ -47,7 +47,7 @@ export default function HomePage() {
         </div>
         <div className="relative w-full h-64">
           <Image
-            src="/image.webp" // Replace with actual path
+            src="/Image.webp" // Replace with actual path
             alt="White Chair"
             layout="fill"
             objectFit="cover"

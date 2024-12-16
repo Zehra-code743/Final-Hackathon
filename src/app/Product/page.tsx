@@ -3,14 +3,14 @@ import Header from "@/components/header"; // Adjust the path if needed
 import Footer from "@/components/footer"; // Adjust the path if needed
 
 const products = [
-  { id: 1, name: "Library Stool Chair", price: "$20", imageUrl: "/image.webp", tag: "New" },
+  { id: 1, name: "Library Stool Chair", price: "$20", imageUrl: "/Image.webp", tag: "New" },
   { id: 2, name: "Library Stool Chair", price: "$20 $30", imageUrl: "/pinksofa.webp", tag: "Sale" },
   { id: 3, name: "Library Stool Chair", price: "$20", imageUrl: "/Frame.webp", tag: "" },
-  { id: 4, name: "Library Stool Chair", price: "$20", imageUrl: "/image2.webp", tag: "" },
+  { id: 4, name: "Library Stool Chair", price: "$20", imageUrl: "/Image2.webp", tag: "" },
   { id: 5, name: "Library Stool Chair", price: "$20", imageUrl: "/image5.webp", tag: "New" },
-  { id: 6, name: "Library Stool Chair", price: "$20 $30", imageUrl: "/image8.webp", tag: "Sale" },
+  { id: 6, name: "Library Stool Chair", price: "$20 $30", imageUrl: "/Image8.webp", tag: "Sale" },
   { id: 7, name: "Library Stool Chair", price: "$20", imageUrl: "/image1.webp", tag: "" },
-  { id: 8, name: "Library Stool Chair", price: "$20", imageUrl: "/image.webp", tag: "" },
+  { id: 8, name: "Library Stool Chair", price: "$20", imageUrl: "/Image.webp", tag: "" },
 ];
 
 // Product Grid Component
@@ -86,9 +86,9 @@ export default function Home() {
             <img src="/image1.webp" alt="chair 1" className="rounded-lg shadow-md" />
             <img src="/image5.webp" alt="chair 2" className="rounded-lg shadow-md" />
             <img src="/pinksofa.webp" alt="chair 3" className="rounded-lg shadow-md" />
-            <img src="/image.webp" alt="chair 4" className="rounded-lg shadow-md" />
+            <img src="/Image.webp" alt="chair 4" className="rounded-lg shadow-md" />
             <img src="/Frame.webp" alt="chair 5" className="rounded-lg shadow-md" />
-            <img src="/image3.webp" alt="chair 6" className="rounded-lg shadow-md" />
+            <img src="/Image3.webp" alt="chair 6" className="rounded-lg shadow-md" />
           </div>
         </section>
 
