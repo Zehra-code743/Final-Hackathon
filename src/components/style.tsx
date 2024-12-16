@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const popularStyles = [
-  { id: 1, name: "White Chair 1", imageUrl: "/image2.png" },
-  { id: 2, name: "White Chair 2", imageUrl: "/image.png" },
-  { id: 3, name: "Gray Chair", imageUrl: "/image8.png" },
-  { id: 4, name: "White Chair 3", imageUrl: "/image.png" },
+  { id: 1, name: "White Chair 1", imageUrl: "/image2.webp" },
+  { id: 2, name: "White Chair 2", imageUrl: "/image.webp" },
+  { id: 3, name: "Gray Chair", imageUrl: "/image8.webp" },
+  { id: 4, name: "White Chair 3", imageUrl: "/image.webp" },
 ];
 
 export default function Style() {
@@ -14,7 +14,7 @@ export default function Style() {
         {/* Left Image */}
         <div className="w-full md:w-1/2 relative">
           <Image
-            src="/Frame.png" // Replace with actual path
+            src="/Frame.webp" // Replace with actual path
             alt="Orange Chair"
             width={500}
             height={600}

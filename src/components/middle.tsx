@@ -1,42 +1,28 @@
-// components/Header.js
+// components/ComfortyComponent.jsx
+import { FaShoppingCart } from "react-icons/fa";
+import Link from "next/link";
 
-import Image from "next/image";
-
-const middle = () => {
+export default function Middle() {
   return (
-    <header className="bg-gray-100 w-full shadow-md py-3">
-      <div className="container mx-auto flex justify-between items-center px-4">
-        {/* Left Section: Logo */}
-        <div className="flex items-center">
-          <Image
-            src="/theLogo.png" // Replace with your actual logo path in the "public" folder
-            alt="Logo"
-            width={30}
-            height={30}
-            className="mr-2"
-          />
-          <span className="text-gray-800 font-semibold text-lg">Comforty</span>
-        </div>
+    <div className="flex flex-col sm:flex-row sm:justify-between items-center border-t-2 bg-[#F0F2F3] p-4 space-y-4 sm:space-y-0 justify-center">
+      {/* Logo Section */}
+      <div className="flex items-center space-x-2">
+        <img src="/theLogo.webp" alt="Comforty Logo" className="h-8 w-8" />
+        <span className="font-semibold text-gray-700 text-base sm:text-lg lg:text-xl">Comforty</span>
+      </div>
 
-        {/* Right Section: Cart */}
-        <div className="relative">
-          <button className="flex items-center text-gray-700 hover:text-gray-900">
-            <Image
-              src="/Icon.png" // Replace with your actual cart icon path in the "public" folder
-              alt="Cart"
-              width={24}
-              height={24}
-              className="mr-1"
-            />
-            <span className="text-sm">Cart</span>
-            <span className="bg-teal-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center ml-1">
-              2
+      {/* Cart Button Section */}
+      <div className="flex items-center">
+        <Link href="/cart" passHref>
+          <button className="relative bg-gray-200 rounded-full px-4 py-2 text-sm sm:text-base md:text-lg font-medium hover:bg-gray-300 flex items-center space-x-2">
+            <FaShoppingCart className="text-gray-600 text-base sm:text-lg" />
+            <span>Cart</span>
+            <span className="ml-2 inline-flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 bg-teal-500 text-white rounded-full">
+              0
             </span>
           </button>
-        </div>
+        </Link>
       </div>
-    </header>
+    </div>
   );
-};
-
-export default middle;
+}

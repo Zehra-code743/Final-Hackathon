@@ -4,19 +4,19 @@ const categories = [
   {
     id: 1,
     name: "Wing Chair",
-    imageUrl: "/image5.png", // Replace with actual path
+    imageUrl: "/image5.webp", // Replace with actual path
     products: "3,542 Products",
   },
   {
     id: 2,
     name: "Wooden Chair",
-    imageUrl: "/image9.png", // Replace with actual path
+    imageUrl: "/image9.webp", // Replace with actual path
     products: "137 Products",
   },
   {
     id: 3,
     name: "Desk Chair",
-    imageUrl: "/image3.png", // Replace with actual path
+    imageUrl: "/image3.webp", // Replace with actual path
     products: "154 Products",
   },
 ];

@@ -19,7 +19,7 @@ const HeroSection = () => {
       {/* Right Section: Image */}
       <div className="w-full lg:w-1/2 flex items-center justify-center">
         <Image
-          src="/chair2.png"
+          src="/chair2.webp"
           alt="Furniture Chair"
           width={500}
           height={500}

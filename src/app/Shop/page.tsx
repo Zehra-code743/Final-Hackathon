@@ -1,65 +1,67 @@
 import Image from "next/image";
+import Header from "@/components/header"; // Update the path if necessary
+import Footer from "@/components/footer"; // Update the path if necessary
 
 const products = [
   {
     id: 1,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image.png",
+    imageUrl: "/image.webp",
     tag: "New",
   },
   {
     id: 2,
     name: "Library Stool Chair",
     price: "$20 $30",
-    imageUrl: "/pinksofa.png",
+    imageUrl: "/pinksofa.webp",
     tag: "Sale",
   },
   {
     id: 3,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/Frame.png",
+    imageUrl: "/Frame.webp",
     tag: "",
   },
   {
     id: 4,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image2.png",
+    imageUrl: "/image2.webp",
     tag: "",
   },
   {
     id: 5,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image5.png",
+    imageUrl: "/image5.webp",
     tag: "New",
   },
   {
     id: 6,
     name: "Library Stool Chair",
     price: "$20 $30",
-    imageUrl: "/image8.png",
+    imageUrl: "/image8.webp",
     tag: "Sale",
   },
   {
     id: 7,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image1.png",
+    imageUrl: "/image1.webp",
     tag: "",
   },
   {
     id: 8,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image.png",
+    imageUrl: "/image.webp",
     tag: "",
   },
 ];
 
-export default function ProductGrid() {
+function ProductGrid() {
   return (
     <section className="px-6 py-12">
       <h2 className="text-2xl font-bold text-center mb-8">Our Products</h2>
@@ -93,7 +95,9 @@ export default function ProductGrid() {
             <div className="p-4 bg-white">
               <h3 className="text-lg font-medium">{product.name}</h3>
               <div className="flex items-center space-x-2">
-                <span className="text-green-600 font-bold">{product.price.split(" ")[0]}</span>
+                <span className="text-green-600 font-bold">
+                  {product.price.split(" ")[0]}
+                </span>
                 {product.price.includes(" ") && (
                   <span className="text-gray-400 line-through">
                     {product.price.split(" ")[1]}
@@ -110,5 +114,22 @@ export default function ProductGrid() {
         ))}
       </div>
     </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <Header />
+
+      {/* Main Content */}
+      <main className="flex-grow">
+        <ProductGrid />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
