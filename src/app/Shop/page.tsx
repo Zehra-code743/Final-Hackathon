@@ -56,7 +56,7 @@ const products = [
     id: 8,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image.webp",
+    imageUrl: "/Image.webp",
     tag: "",
   },
 ];
