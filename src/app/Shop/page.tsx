@@ -7,7 +7,7 @@ const products = [
     id: 1,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image.webp",
+    imageUrl: "/Image.webp",
     tag: "New",
   },
   {
@@ -28,7 +28,7 @@ const products = [
     id: 4,
     name: "Library Stool Chair",
     price: "$20",
-    imageUrl: "/image2.webp",
+    imageUrl: "/Image2.webp",
     tag: "",
   },
   {
@@ -42,7 +42,7 @@ const products = [
     id: 6,
     name: "Library Stool Chair",
     price: "$20 $30",
-    imageUrl: "/image8.webp",
+    imageUrl: "/Image8.webp",
     tag: "Sale",
   },
   {
