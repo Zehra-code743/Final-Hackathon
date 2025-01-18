@@ -11,9 +11,9 @@ import ProductsPage from "@/components/OurProducts";
 import ContactSection from "./Contact/page";
 import Company from "@/components/company";
 import FeatureProduct from "@/components/FeatureProduct";
-import Shop from "./Shop/page";
 import TopCategories from "@/components/TopCategories";
 import Style from "@/components/style";
+import script from "next/script"
 
 
 
@@ -48,24 +48,25 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         
-       {children}
 
         <Topbar/>
        <Middle />
-       <Header/>
+       {children}
+
+
+       {/* <Header/>
        <Hero/>
        <Company/>
        <FeatureProduct/>
-       <TopCategories/>
-       <Style/>
+       <Style/> */}
 
        
      
-<ProductsPage/>
     
      
        
        <Footer/>
+       
       </body>
     </html>
   );

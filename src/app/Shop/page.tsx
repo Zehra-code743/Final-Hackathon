@@ -117,7 +117,7 @@ function ProductGrid() {
   );
 }
 
-export default function Home() {
+export default function Shop() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
