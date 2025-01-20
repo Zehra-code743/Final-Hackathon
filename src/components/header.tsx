@@ -26,8 +26,8 @@ const Header = () => {
             Checkout
           </Link>
            {/* Add Checkout Link */}
-           <Link href="/shoppingcart" className="text-gray-700 hover:text-gray-900">
-            shoppingcart
+           <Link href="/Shoppingcart" className="text-gray-700 hover:text-gray-900">
+          Shoppingcart
           </Link>
         </div>
 

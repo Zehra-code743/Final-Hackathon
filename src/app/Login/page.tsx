@@ -1,96 +1,83 @@
 import React from 'react';
+import Link from 'next/link';
+import { FaFacebook, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
   return (
-    <div className="font-[sans-serif]">
-      <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">
-        <div className="grid md:grid-cols-2 items-center gap-10 max-w-6xl max-md:max-w-md w-full">
-          <div>
-            <h2 className="lg:text-5xl text-3xl font-extrabold lg:leading-[55px] text-gray-800">
-              Seamless Login for Exclusive Access
-            </h2>
-            <p className="text-sm mt-6 text-gray-800">
-              Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.
-            </p>
-            <p className="text-sm mt-12 text-gray-800">
-              Don't have an account{' '}
-              <a href="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1">
-                Register here
-              </a>
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="hidden md:block">
-            <img
-              src="/pinksofa.webp"
-              alt="Login Image"
-              className="w-full rounded-md shadow-lg"
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 font-sans">
+      <div className="max-w-4xl w-full bg-white p-6 rounded-lg shadow-2xl flex">
+        {/* Left Side (Form) */}
+        <div className="w-full sm:w-1/2 px-6">
+          <h2 className="text-3xl font-extrabold text-gray-800 text-center">
+            Welcome Back!
+          </h2>
+          <p className="text-sm text-gray-600 text-center mt-2">
+            Sign in to access your account
+          </p>
+          <form className="mt-6 space-y-4">
+            <input
+              type="email"
+              name="email"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Email address"
+              required
             />
-          </div>
-
-          <form className="max-w-md md:ml-auto w-full">
-            <h3 className="text-gray-800 text-3xl font-extrabold mb-8">Sign in</h3>
-
-            <div className="space-y-4">
-              <div>
-                <input
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
-                  placeholder="Email address"
-                />
-              </div>
-              <div>
-                <input
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600 focus:bg-transparent"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor="remember-me" className="ml-3 block text-sm text-gray-800">
-                    Remember me
-                  </label>
-                </div>
-                <div className="text-sm">
-                  <a href="javascript:void(0);" className="text-blue-600 hover:text-blue-500 font-semibold">
-                    Forgot your password?
-                  </a>
-                </div>
-              </div>
+            <input
+              type="password"
+              name="password"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Password"
+              required
+            />
+            <div className="flex items-center justify-between">
+              <label className="flex items-center text-sm text-gray-600">
+                <input type="checkbox" className="mr-2 rounded border-gray-300" />
+                Remember me
+              </label>
+              <Link href="/forgot-password">
+                <span className="text-sm text-indigo-600 hover:underline cursor-pointer">
+                  Forgot password?
+                </span>
+              </Link>
             </div>
-
-            <div className="!mt-8">
-              <button
-                type="button"
-                className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
-              >
-                Log in
-              </button>
-            </div>
-
-            <div className="my-4 flex items-center gap-4">
-              <hr className="w-full border-gray-300" />
-              <p className="text-sm text-gray-800 text-center">or</p>
-              <hr className="w-full border-gray-300" />
-            </div>
-
-            {/* Social login buttons removed */}
+            <button
+              type="submit"
+              className="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none transition duration-300"
+            >
+              Sign In
+            </button>
           </form>
+          <p className="text-sm text-center text-gray-600 mt-4">
+            Don't have an account?{' '}
+            <Link href="/register">
+              <span className="text-indigo-600 hover:underline cursor-pointer">Register</span>
+            </Link>
+          </p>
+
+          {/* Social Media Icons */}
+          <div className="flex justify-center gap-6 mt-6">
+            <Link href="https://www.facebook.com" passHref>
+              <span className="cursor-pointer">
+                <FaFacebook className="w-8 h-8 text-blue-600 hover:text-blue-800 transition duration-300" />
+              </span>
+            </Link>
+            <Link href="https://github.com" passHref>
+              <span className="cursor-pointer">
+                <FaGithub className="w-8 h-8 text-gray-800 hover:text-black transition duration-300" />
+              </span>
+            </Link>
+          </div>
         </div>
+
+        {/* Right Side (Background Image) */}
+        <div
+          className="hidden sm:block w-1/2 rounded-lg"
+          style={{
+            backgroundImage: 'url(/Pinksofa.webp)', // Replace with your image link
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
       </div>
     </div>
   );
