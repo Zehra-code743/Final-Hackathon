@@ -23,11 +23,20 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Right side contact information */}
-        <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-          <span className="text-gray-700">Contact:</span>
-          <Link href="/Contact">
-            <span className="text-gray-500 hover:text-gray-700">(808) 555-0111</span>
+        {/* Right side contact information and Login */}
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4">
+            <span className="text-gray-700">Contact:</span>
+            <Link href="/Contact">
+              <span className="text-gray-500 hover:text-gray-700">(808) 555-0111</span>
+            </Link>
+          </div>
+
+          {/* Login Link */}
+          <Link href="/Login">
+            <button className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600">
+              Login
+            </button>
           </Link>
         </div>
       </div>

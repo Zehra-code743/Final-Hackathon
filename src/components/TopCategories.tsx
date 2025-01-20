@@ -1,46 +1,85 @@
-import { sanityFetchProducts } from "@/sanity/lib/productFetch";
-import { category } from "@/sanity/lib/queries";
-import Image from "next/image";
 
+"use client"
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
 
 type Category = {
   _id: string;
   title: string;
-  products: string;
   imageUrl: string;
+  products:number
 };
 
-export default async function TopCategories() {
-  const allCategory: Category[] = await sanityFetchProducts({
-    query: category,
-  });
+const CategoryListPage = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  const fetchCategories = async () => {
+    try {
+      const result = await client.fetch(`
+        *[_type == "categories"]{
+          _id,
+          title,
+          'imageUrl': image.asset->url,
+          products
+          
+        }
+      `);
+
+      setCategories(result);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
-    <section className="px-6 py-12">
-      <h2 className="text-2xl font-bold mb-6">Top Categories</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {allCategory.map((category) => (
-          <div
-            key={category._id}
-            className="relative overflow-hidden rounded-lg shadow-md"
-          >
-            <Image
-              src={category.imageUrl}
-              alt={category.title}
-              width={400}
-              height={300}
-              className="object-cover w-full h-64"
-            />
-           <div className="h-[80px] w-full bg-black opacity-70 absolute bottom-0 rounded-b-md shadow-md">
-                <div className="text-white my-[18px] ml-4 hover:cursor-pointer ">
-                  <p className="font-bold">{category.title}</p>
-                  <p className="font-extralight text-[14px] ">
-                    {category.products} <span className="ml-1">Products</span>{" "}
-                  </p>
+    <section>
+      <div className="px-4 my-10">
+        <h2 className="max-w-screen-xl mx-auto text-3xl font-bold mt-20 mb-10 text-[#272343] text-center lg:text-start">
+          Top Categories
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-screen-xl">
+          {categories.map((category) => (
+          
+              <div
+                className="relative shadow-md rounded-md hover:scale-105 active:scale-100 duration-500"
+              >
+                <img
+                  src={category.imageUrl}
+                  alt={category.title}
+                  className="w-full object-cover"
+                  height={400}
+                  width={400}
+                />
+                <div className="h-[80px] w-full bg-black opacity-70 absolute bottom-0 rounded-b-md shadow-md">
+                  <div className="text-white my-[18px] ml-4">
+                    <p className="font-bold">{category.title}</p>
+                    <p>{category.products} <span className="
+                    ">produsts</span></p>
+                  </div>
                 </div>
               </div>
-          </div>
-        ))}
+           
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default CategoryListPage;
+
+
+// *[_type == "products" && 
+//   category->title == "Wing Chair"]{
+//   _id,
+//     "imageUrl":image.asset->url,
+//       title,
+//     price,
+//     tags,
+//     badge
+// }

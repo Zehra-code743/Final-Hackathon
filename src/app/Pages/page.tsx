@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/header"; // Adjust the path as needed
 import Footer from "@/components/footer"; // Adjust the path as needed
-
+import Link from "next/link";
 // ProductDetails Component
 function ProductDetails() {
   return (
