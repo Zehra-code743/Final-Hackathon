@@ -21,6 +21,14 @@ const Header = () => {
           <Link href="/About" className="text-gray-700 hover:text-gray-900">
             About
           </Link>
+          {/* Add Checkout Link */}
+          <Link href="/Checkout" className="text-gray-700 hover:text-gray-900">
+            Checkout
+          </Link>
+           {/* Add Checkout Link */}
+           <Link href="/shoppingcart" className="text-gray-700 hover:text-gray-900">
+            shoppingcart
+          </Link>
         </div>
 
         {/* Right side contact information and Login */}
