@@ -24,31 +24,25 @@ const Login = () => {
               {/* Email Input */}
               <div>
                 <label className="text-gray-800 text-xs block mb-2">Email</label>
-                <div className="relative flex items-center">
-                  <input
-                    name="email"
-                    type="text"
-                    required
-                    className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 pl-2 pr-8 py-3 outline-none"
-                    placeholder="Enter email"
-                  />
-                  {/* SVG Icon (optional) */}
-                </div>
+                <input
+                  name="email"
+                  type="text"
+                  required
+                  className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 pl-2 py-3 outline-none"
+                  placeholder="Enter email"
+                />
               </div>
 
               {/* Password Input */}
               <div className="mt-8">
                 <label className="text-gray-800 text-xs block mb-2">Password</label>
-                <div className="relative flex items-center">
-                  <input
-                    name="password"
-                    type="password"
-                    required
-                    className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 pl-2 pr-8 py-3 outline-none"
-                    placeholder="Enter password"
-                  />
-                  {/* SVG Icon (optional) */}
-                </div>
+                <input
+                  name="password"
+                  type="password"
+                  required
+                  className="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 pl-2 py-3 outline-none"
+                  placeholder="Enter password"
+                />
               </div>
 
               {/* Remember Me and Forgot Password */}
@@ -67,14 +61,12 @@ const Login = () => {
                     Remember me
                   </label>
                 </div>
-                <div>
-                  <a
-                    href="#"
-                    className="text-blue-600 font-semibold text-sm hover:underline"
-                  >
-                    Forgot Password?
-                  </a>
-                </div>
+                <a
+                  href="#"
+                  className="text-blue-600 font-semibold text-sm hover:underline"
+                >
+                  Forgot Password?
+                </a>
               </div>
 
               {/* Sign In Button */}
@@ -96,15 +88,9 @@ const Login = () => {
 
               {/* Social Login Buttons */}
               <div className="space-x-6 flex justify-center">
-                <button type="button" className="border-none outline-none">
-                  {/* Google Icon */}
-                </button>
-                <button type="button" className="border-none outline-none">
-                  {/* Twitter Icon */}
-                </button>
-                <button type="button" className="border-none outline-none">
-                  {/* Facebook Icon */}
-                </button>
+                <button type="button" className="text-blue-600 hover:underline">Google</button>
+                <button type="button" className="text-blue-400 hover:underline">Twitter</button>
+                <button type="button" className="text-blue-800 hover:underline">Facebook</button>
               </div>
             </form>
           </div>
@@ -127,7 +113,7 @@ const Login = () => {
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800"
           >
-            <i className="fab fa-facebook fa-2x"></i>
+            Facebook
           </a>
           <a
             href="https://google.com"
@@ -135,7 +121,7 @@ const Login = () => {
             rel="noopener noreferrer"
             className="text-red-600 hover:text-red-800"
           >
-            <i className="fab fa-google fa-2x"></i>
+            Google
           </a>
           <a
             href="https://instagram.com"
@@ -143,7 +129,7 @@ const Login = () => {
             rel="noopener noreferrer"
             className="text-pink-600 hover:text-pink-800"
           >
-            <i className="fab fa-instagram fa-2x"></i>
+            Instagram
           </a>
         </div>
       </div>
