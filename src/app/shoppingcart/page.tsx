@@ -7,9 +7,8 @@ const ShoppingCart = () => {
   const router = useRouter();
 
   const cartItems = [
-    { id: 1, name: "Citrus Edge", price: 20, image: "/Frame.webp", quantity: 1 },
-    { id: 2, name: "Rose Luxe Armchair", price: 20, image: "/Sofa.webp", quantity: 1 },
-    { id: 3, name: "Library Stool Chair", price: 20, image: "/Image.webp", quantity: 1 },
+    { id: 1, name: "Citrus Edge", price: 20, image: "/Frame.webp", quantity: 1 },gi
+    { id: 2, name: "Library Stool Chair", price: 20, image: "/Image.webp", quantity: 1 },
   ];
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
