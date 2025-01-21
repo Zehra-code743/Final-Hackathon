@@ -47,7 +47,7 @@ const CategoryListPage = () => {
                 key={category._id || index} // Use index as fallback key if _id is missing
                 className="relative shadow-md rounded-md hover:scale-105 active:scale-100 duration-500"
               >
-                <Link href={`/categories/${category._id}`}>
+                <Link href={`/Categories/${category._id}`}>
                   <img
                     src={category.imageUrl}
                     alt={category.title}

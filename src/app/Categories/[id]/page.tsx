@@ -3,27 +3,28 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
+import { Result } from "postcss";
+import { useParams } from "next/navigation";
+import { urlFor } from "@/sanity/lib/image";
 
 type Category = {
   _id: string;
   title: string;
-  imageUrl: string;
+  image: string;
   products: number;
 };
-
 const CategoryListPage = () => {
+  const { id } = useParams();
   const [categories, setCategories] = useState<Category[]>([]);
+console.log(id);
 
   const fetchTopCategories = async () => {
     try {
       const result = await client.fetch(`
-        *[_type == "categories"] | order(products desc) [0...5]{
-          _id,
-          title,
-          "imageUrl": image.asset->url,
-          products
-        }
+       *[_id == "${id}"]
+        
       `);
+      console.log(result);
       setCategories(result);
     } catch (error) {
       console.error("Error fetching top categories:", error);
@@ -33,6 +34,8 @@ const CategoryListPage = () => {
   useEffect(() => {
     fetchTopCategories();
   }, []);
+
+  
 
   return (
     <section>
@@ -47,9 +50,9 @@ const CategoryListPage = () => {
                 key={category._id || index} // Use index as fallback key if _id is missing
                 className="relative shadow-md rounded-md hover:scale-105 active:scale-100 duration-500"
               >
-                <Link href={`/categories/${category._id}`}>
+                {/* <Link href={`/products/${category._id}`}> */}
                   <img
-                    src={category.imageUrl}
+                    src={urlFor(category.image).url()}
                     alt={category.title}
                     className="w-full object-cover"
                     height={400}
@@ -61,7 +64,10 @@ const CategoryListPage = () => {
                       <p>{category.products} products</p>
                     </div>
                   </div>
-                </Link>
+                  sirf schema me name price he is liye masla a raha he tu schema ma description bhi add kardein
+                  me karo 
+                  apka code dekh kar mujhy chakar a rahe he q
+                {/* </Link> */}
               </div>
             ))}
           </div>
