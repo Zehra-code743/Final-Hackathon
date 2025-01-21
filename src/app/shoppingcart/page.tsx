@@ -8,7 +8,7 @@ const ShoppingCart = () => {
 
   const cartItems = [
     { id: 1, name: "Citrus Edge", price: 20, image: "/Frame.webp", quantity: 1 },
-    { id: 2, name: "Rose Luxe Armchair", price: 20, image: "/sofa.webp", quantity: 1 },
+    { id: 2, name: "Rose Luxe Armchair", price: 20, image: "/Sofa.webp", quantity: 1 },
     { id: 3, name: "Library Stool Chair", price: 20, image: "/Image.webp", quantity: 1 },
   ];
 
