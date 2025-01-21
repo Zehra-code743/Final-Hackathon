@@ -71,11 +71,9 @@ const Login = () => {
 
         {/* Right Side (Background Image) */}
         <div
-          className="hidden sm:block w-1/2 rounded-lg"
+          className="w-full sm:w-1/2 rounded-lg bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/Pinksofa.webp)', // Replace with your image link
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: 'url(/product2.webp)', // Replace with your image link
           }}
         ></div>
       </div>
