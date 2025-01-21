@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import the Image component
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
@@ -69,13 +70,16 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Right Side (Background Image) */}
-        <div
-          className="w-full sm:w-1/2 rounded-lg bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/product2.webp)', // Replace with your image link
-          }}
-        ></div>
+        {/* Right Side (Simple Image using Next.js Image) */}
+        <div className="w-full sm:w-1/2 flex items-center justify-center">
+          <Image
+            src="/product2.webp" // Replace with your actual image path
+            alt="Login Illustration"
+            width={400} // Set the width of the image
+            height={400} // Set the height of the image
+            className="rounded-lg"
+          />
+        </div>
       </div>
     </div>
   );
