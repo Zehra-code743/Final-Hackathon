@@ -1,9 +1,42 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // Import the Image component
+import Image from 'next/image';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+
+      // Redirect or handle successful login
+      console.log('Login successful:', data);
+      alert('Login successful!');
+      // Example: redirect to the dashboard
+      // window.location.href = '/dashboard';
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('Login failed! Please check your credentials.');
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 font-sans">
       <div className="max-w-4xl w-full bg-white p-6 rounded-lg shadow-2xl flex">
@@ -15,10 +48,12 @@ const Login = () => {
           <p className="text-sm text-gray-600 text-center mt-2">
             Sign in to access your account
           </p>
-          <form className="mt-6 space-y-4">
+          <form className="mt-6 space-y-4" onSubmit={handleLogin}>
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Email address"
               required
@@ -26,6 +61,8 @@ const Login = () => {
             <input
               type="password"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder="Password"
               required
@@ -75,8 +112,8 @@ const Login = () => {
           <Image
             src="/product2.webp" // Replace with your actual image path
             alt="Login Illustration"
-            width={400} // Set the width of the image
-            height={400} // Set the height of the image
+            width={400}
+            height={400}
             className="rounded-lg"
           />
         </div>

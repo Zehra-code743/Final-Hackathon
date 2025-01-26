@@ -1,192 +1,170 @@
-import React from "react";
-import { FaCcMastercard, FaCcVisa, FaPaypal } from "react-icons/fa";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const Checkout = () => {
+const Checkout: React.FC = () => {
+  const [cartItems, setCartItems] = useState<any[]>([]);
+  const [totalAmount, setTotalAmount] = useState<string>("");
+  const [shippingAddress, setShippingAddress] = useState({
+    name: "",
+    address: "",
+    city: "",
+    postalCode: "",
+  });
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Retrieve cart data and total amount from query parameters
+    const cartData = searchParams.get("cart");
+    const total = searchParams.get("total");
+
+    if (cartData && total) {
+      setCartItems(JSON.parse(cartData));
+      setTotalAmount(total);
+    }
+  }, [searchParams]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setShippingAddress({
+      ...shippingAddress,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Order placed successfully!");
+    // You can further handle the form submission by sending data to an API or server
+  };
+
   return (
-    <div className="font-sans bg-gradient-to-r from-blue-50 via-white to-blue-50 p-6 sm:p-8 lg:p-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 inline-block border-b-[4px] border-blue-600 pb-2 tracking-tight">
-            Checkout
-          </h2>
-        </div>
+    <div className="font-sans p-4 mx-auto lg:max-w-7xl md:max-w-4xl max-w-xl">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 sm:mb-10">
+        Checkout
+      </h2>
 
-        <div className="mt-8 sm:mt-12">
-          {/* Personal Details Section */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-gray-600">01</h3>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mt-1">
-                Personal Details
-              </h3>
-            </div>
+      {/* Order Summary */}
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h2 className="text-2xl font-bold text-center mb-6">Your Order Summary</h2>
 
-            <div className="md:col-span-2">
-              <form>
-                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
+        {cartItems.length === 0 ? (
+          <p className="text-center text-gray-600">Your cart is empty.</p>
+        ) : (
+          <>
+            {cartItems.map((item: any) => (
+              <div
+                key={item.id}
+                className="flex justify-between items-center mb-4 p-4 bg-gray-50 rounded-lg"
+              >
+                <div className="flex items-center gap-4">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={80}
+                    height={80}
+                    className="object-cover rounded"
+                  />
                   <div>
-                    <input
-                      type="text"
-                      placeholder="First name"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email address"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="number"
-                      placeholder="Phone number"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
+                    <h3 className="font-semibold">{item.name}</h3>
+                    <p className="text-sm text-gray-600">
+                      Price: ${item.price}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Total: ${item.price * item.quantity}
+                    </p>
                   </div>
                 </div>
-              </form>
-            </div>
-          </div>
-
-          {/* Shopping Address Section */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-8 sm:mt-12">
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-gray-600">02</h3>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mt-1">
-                Shopping Address
-              </h3>
-            </div>
-
-            <div className="md:col-span-2">
-              <form>
-                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Street address"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="City"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="State"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="number"
-                      placeholder="Zip Code"
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                    />
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          {/* Payment Method Section */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-8 sm:mt-12">
-            <div>
-              <h3 className="text-3xl sm:text-4xl font-bold text-gray-600">03</h3>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mt-1">
-                Payment Method
-              </h3>
-            </div>
-
-            <div className="md:col-span-2">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="flex items-center">
-                  <input type="radio" className="w-6 h-6 cursor-pointer" id="card" />
-                  <label htmlFor="card" className="ml-4 flex gap-2 items-center cursor-pointer">
-                    <FaCcMastercard className="w-12 sm:w-16 text-gray-800 hover:text-blue-600 transition-all" />
-                    <FaCcVisa className="w-12 sm:w-16 text-gray-800 hover:text-blue-600 transition-all" />
-                  </label>
-                </div>
-
-                <div className="flex items-center">
-                  <input type="radio" className="w-6 h-6 cursor-pointer" id="paypal" />
-                  <label htmlFor="paypal" className="ml-4 flex gap-2 items-center cursor-pointer">
-                    <FaPaypal className="w-16 sm:w-20 text-gray-800 hover:text-blue-600 transition-all" />
-                  </label>
-                </div>
+                <span className="font-semibold">Quantity: {item.quantity}</span>
               </div>
+            ))}
 
-              <div className="grid sm:grid-cols-4 gap-4 lg:gap-6 mt-6">
-                <div className="col-span-2">
-                  <input
-                    type="number"
-                    placeholder="Card number"
-                    className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="EXP."
-                    className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="number"
-                    placeholder="CVV"
-                    className="px-4 sm:px-6 py-3 sm:py-4 bg-white text-gray-800 w-full text-lg border-2 rounded-lg focus:border-blue-500 outline-none shadow-sm hover:shadow-md"
-                  />
-                </div>
+            <div className="border-t pt-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-600">Subtotal:</span>
+                <span className="text-gray-800 font-semibold">
+                  ${cartItems.reduce(
+                    (acc, item: any) => acc + item.price * item.quantity,
+                    0
+                  ).toFixed(2)}
+                </span>
+              </div>
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-600">Total:</span>
+                <span className="text-indigo-600 text-lg font-semibold">
+                  ${totalAmount}
+                </span>
               </div>
             </div>
-          </div>
+          </>
+        )}
+      </div>
 
-          {/* Checkbox for Terms */}
-          <div className="flex items-center mt-6 sm:mt-8">
+      {/* Shipping Address Form */}
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h2 className="text-2xl font-bold text-center mb-6">Shipping Address</h2>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex flex-col">
+            <label htmlFor="name" className="font-semibold">Full Name</label>
             <input
-              type="checkbox"
-              id="remember-me"
-              name="remember-me"
-              className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              type="text"
+              id="name"
+              name="name"
+              value={shippingAddress.name}
+              onChange={handleChange}
+              className="border p-2 rounded-md"
+              required
             />
-            <label htmlFor="remember-me" className="ml-2 text-sm text-gray-700">
-              I agree to the{" "}
-              <a href="#" className="text-blue-600 hover:underline">
-                terms and conditions
-              </a>
-            </label>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row justify-end gap-4 sm:gap-6 mt-8 sm:mt-12">
+          <div className="flex flex-col">
+            <label htmlFor="address" className="font-semibold">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={shippingAddress.address}
+              onChange={handleChange}
+              className="border p-2 rounded-md"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="city" className="font-semibold">City</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={shippingAddress.city}
+              onChange={handleChange}
+              className="border p-2 rounded-md"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="postalCode" className="font-semibold">Postal Code</label>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              value={shippingAddress.postalCode}
+              onChange={handleChange}
+              className="border p-2 rounded-md"
+              required
+            />
+          </div>
+
+          <div className="mt-6 text-center">
             <button
-              type="button"
-              className="px-6 sm:px-8 py-3 sm:py-4 text-lg font-semibold tracking-wide bg-transparent border-2 text-gray-800 rounded-md hover:bg-gray-100 transition-all"
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-lg px-6 py-2 rounded"
             >
-              Pay later
-            </button>
-            <button
-              type="button"
-              className="px-6 sm:px-8 py-3 sm:py-4 text-lg font-semibold tracking-wide bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all"
-            >
-              Pay now
+              Place Order
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
